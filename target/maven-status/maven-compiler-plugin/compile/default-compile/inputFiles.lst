@@ -1,0 +1,11 @@
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/Main.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/BaseMigration.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/MoviesMigration.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/RatingsMigration.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/RatingsV2Migration.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/TagsByGenre.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/TagsMigration.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/UsersByGenre.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/migrate/UsersMigration.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/ui/AppFrame.java
+/Users/macbook/Downloads/mysql2mongodb/src/main/java/com/okmich/mysql2mongodb/ui/TagsPanel.java

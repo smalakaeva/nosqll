@@ -1,0 +1,9 @@
+com/okmich/mysql2mongodb/migrate/UsersByGenre.class
+com/okmich/mysql2mongodb/ui/AppFrame.class
+com/okmich/mysql2mongodb/migrate/BaseMigration.class
+com/okmich/mysql2mongodb/migrate/RatingsV2Migration.class
+com/okmich/mysql2mongodb/migrate/TagsMigration.class
+com/okmich/mysql2mongodb/migrate/UsersMigration.class
+com/okmich/mysql2mongodb/migrate/RatingsMigration.class
+com/okmich/mysql2mongodb/Main.class
+com/okmich/mysql2mongodb/migrate/MoviesMigration.class
