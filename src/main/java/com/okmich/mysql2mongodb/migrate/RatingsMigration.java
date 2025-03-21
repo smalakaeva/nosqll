@@ -48,6 +48,19 @@ public class RatingsMigration extends BaseMigration {
     }
 
     @Override
+    public String getDataFromMongo(String selectedItem) {
+        MongoDatabase mongoDatabase = getMongoDatabase(mongoDbUrl, mongoDbName);
+        MongoCollection<Document> collection = mongoDatabase.getCollection("users");
+        StringBuilder result = new StringBuilder();
+
+        for (Document document : collection.find()) {
+            result.append(document.toJson()).append("\n");
+        }
+
+        return result.toString();
+    }
+
+    @Override
     public void migrate() {
         MongoDatabase mongoDB = getMongoDatabase(mongoDbUrl, mongoDbName);
         MongoCollection collection = mongoDB.getCollection("ratings");

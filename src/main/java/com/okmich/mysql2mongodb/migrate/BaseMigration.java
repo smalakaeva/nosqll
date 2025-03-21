@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package com.okmich.mysql2mongodb.migrate;
 
 import com.mongodb.MongoClient;
@@ -15,10 +10,6 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import org.bson.Document;
 
-/**
- *
- * @author michael.enudi
- */
 public abstract class BaseMigration {
 
     protected String jdbcServerUrl;
@@ -27,14 +18,6 @@ public abstract class BaseMigration {
     protected String mongoDbUrl;
     protected String mongoDbName;
 
-    /**
-     *
-     * @param dbServerUrl
-     * @param dbUser
-     * @param dbPassword
-     * @param mongoDbUrl
-     * @param mongoDbName
-     */
     protected BaseMigration(String dbServerUrl, String dbUser, String dbPassword,
                             String mongoDbUrl, String mongoDbName) {
         this.jdbcPassword = dbPassword;
@@ -52,7 +35,6 @@ public abstract class BaseMigration {
             Logger.getLogger(BaseMigration.class.getName()).log(Level.SEVERE, null, ex);
             throw new RuntimeException(ex.getMessage(), ex);
         }
-
     }
 
     protected MongoDatabase getMongoDatabase(String serverUrl, String db) {
@@ -64,7 +46,5 @@ public abstract class BaseMigration {
 
     protected abstract Document rowToDocument(Object... row);
 
-    public String getDataFromMongo(String selectedItem){
-        return null;
-    }
+    public abstract String getDataFromMongo(String selectedItem);
 }

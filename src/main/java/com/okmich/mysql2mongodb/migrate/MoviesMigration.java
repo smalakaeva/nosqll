@@ -43,6 +43,18 @@ public class MoviesMigration extends BaseMigration {
                            String mongoServerUrl, String mongoDbName) {
         super(dbServerUrl, dbUser, dbPassword, mongoServerUrl, mongoDbName);
     }
+    @Override
+    public String getDataFromMongo(String selectedItem) {
+        MongoDatabase mongoDatabase = getMongoDatabase(mongoDbUrl, mongoDbName);
+        MongoCollection<Document> collection = mongoDatabase.getCollection("users");
+        StringBuilder result = new StringBuilder();
+
+        for (Document document : collection.find()) {
+            result.append(document.toJson()).append("\n");
+        }
+
+        return result.toString();
+    }
 
     @Override
     protected Document rowToDocument(Object... row) {

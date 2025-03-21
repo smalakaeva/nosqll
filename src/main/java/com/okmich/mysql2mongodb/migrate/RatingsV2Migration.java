@@ -74,6 +74,18 @@ public class RatingsV2Migration extends BaseMigration {
 
         return object;
     }
+    @Override
+    public String getDataFromMongo(String selectedItem) {
+        MongoDatabase mongoDatabase = getMongoDatabase(mongoDbUrl, mongoDbName);
+        MongoCollection<Document> collection = mongoDatabase.getCollection("ratings_v2");
+        StringBuilder result = new StringBuilder();
+
+        for (Document document : collection.find()) {
+            result.append(document.toJson()).append("\n");
+        }
+
+        return result.toString();
+    }
 
     @Override
     public void migrate() {

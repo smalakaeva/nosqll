@@ -13,17 +13,20 @@ public class TagsPanel extends JPanel {
     private JButton button1;
     private JTextPane textPane1;
 
-    public TagsPanel(String dbServerUrl, String dbUser,  String StringdbPassword,
-                     String mongoDbUrl, String StringmongoDbName) {
+    public TagsPanel(String dbServerUrl, String dbUser, String dbPassword,
+                     String mongoDbUrl, String mongoDbName) {
         $$$setupUI$$$();
-//        setSize(300, 300);
+        textPane1.setMinimumSize(new Dimension(400, 400));
+        textPane1.setPreferredSize(new Dimension(600, 300));
+        textPane1.setMaximumSize(new Dimension(800, 400));
+
 //        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //        add($$$getRootComponent$$$());
         button1.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                BaseMigration migrationUtil = TagsByGenre( dbServerUrl,  dbUser,  dbPassword,
-                         mongoDbUrl,  mongoDbName);
+                BaseMigration migrationUtil = new TagsByGenre(dbServerUrl, dbUser, dbPassword, mongoDbUrl, mongoDbName);
+
                 String s = migrationUtil.getDataFromMongo(null);
 
                 textPane1.setText(s);
@@ -50,6 +53,7 @@ public class TagsPanel extends JPanel {
         final com.intellij.uiDesigner.core.Spacer spacer2 = new com.intellij.uiDesigner.core.Spacer();
         panel1.add(spacer2, new com.intellij.uiDesigner.core.GridConstraints(1, 1, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_VERTICAL, 1, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, null, null, 0, false));
         textPane1 = new JTextPane();
+        textPane1.setText("");
         panel1.add(textPane1, new com.intellij.uiDesigner.core.GridConstraints(1, 0, 1, 1, com.intellij.uiDesigner.core.GridConstraints.ANCHOR_CENTER, com.intellij.uiDesigner.core.GridConstraints.FILL_BOTH, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, com.intellij.uiDesigner.core.GridConstraints.SIZEPOLICY_WANT_GROW, null, new Dimension(150, 50), null, 0, false));
     }
 
